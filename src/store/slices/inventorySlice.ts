@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { COOKIE_MOCK_DATA, type Cookie } from "../../utils/mockData";
-import { loadFromStorage } from "../../utils/storage";
+import { COOKIE_MOCK_DATA, type Cookie } from "@/utils/mockData";
+import { loadFromStorage } from "@/utils/storage";
 interface InventoryState {
   items: Cookie[];
 }

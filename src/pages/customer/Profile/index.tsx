@@ -8,8 +8,8 @@ import {
 } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { type RootState } from "../../../store";
-import { logoutUser } from "../../../store/slices/authSlice";
+import { type RootState } from "@/store";
+import { logoutUser } from "@/store/slices/authSlice";
 import {
   ProfileContainer,
   SidebarTabs,
@@ -20,8 +20,8 @@ import {
   HeaderRow,
 } from "./styles";
 import Text from "antd/es/typography/Text";
-import { StyledCard } from "../../../components/StyledCard";
-import { StyledTitle } from "../../../components/StyledTitle";
+import { StyledCard } from "@/components/StyledCard";
+import { StyledTitle } from "@/components/StyledTitle";
 
 const { useBreakpoint } = Grid;
 

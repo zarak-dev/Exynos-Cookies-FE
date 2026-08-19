@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Flex, Form, Input, Modal, Radio } from "antd";
 import { useDispatch } from "react-redux";
-import { addUser } from "../../../../../store/slices/userHistorySlice";
+import { addUser } from "@/store/slices/userHistorySlice";
 import { v4 as uuidv4 } from "uuid";
 import type { MessageInstance } from "antd/es/message/interface";
 

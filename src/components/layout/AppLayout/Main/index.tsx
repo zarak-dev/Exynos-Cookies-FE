@@ -2,8 +2,8 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
-import { AuthModal } from "../../../common/Auth";
-import { CartDrawer } from "../../../common/CartDrawer";
+import { AuthModal } from "@/components/common/Auth";
+import { CartDrawer } from "@/components/common/CartDrawer";
 import { LayoutWrapper, ContentArea } from "./styles";
 import InfoBar from "../../../common/InfoBar";
 

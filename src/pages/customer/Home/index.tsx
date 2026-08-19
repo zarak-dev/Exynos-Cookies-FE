@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Tag, message, Rate, Avatar, Spin, Flex } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchReviewUsers } from "../../../store/slices/reviewSlice";
-import { type Cookie } from "../../../utils/mockData";
-import { type RootState } from "../../../store";
+import { fetchReviewUsers } from "@/store/slices/reviewSlice";
+import { type Cookie } from "@/utils/mockData";
+import { type RootState } from "@/store";
 import HomeCarousel from "./components/HomeCarousel";
-import { StyledCard } from "../../../components/StyledCard";
-import { StyledTitle } from "../../../components/StyledTitle";
+import { StyledCard } from "@/components/StyledCard";
+import { StyledTitle } from "@/components/StyledTitle";
 
 import {
   BestSection,
@@ -35,7 +35,7 @@ import {
   StyledMeta,
   BestCardTitle,
 } from "./styles";
-import { addCookieWithFeedback } from "../../../utils/cartActions";
+import { addCookieWithFeedback } from "@/utils/cartActions";
 
 const BEST_COOKIE_IDS = [2, 3, 6, 9, 10, 4];
 const TRENDING_COOKIE_IDS = [13, 18, 17];

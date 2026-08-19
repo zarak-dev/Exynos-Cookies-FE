@@ -2,16 +2,13 @@ import React, { useState } from "react";
 import { Table } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { type RootState } from "../../../store";
-import {
-  deleteOrder,
-  updateOrderStatus,
-} from "../../../store/slices/orderSlice";
+import { type RootState } from "@/store";
+import { deleteOrder, updateOrderStatus } from "@/store/slices/orderSlice";
 import { OrdersCard } from "./styles";
 import { getOrderColumns } from "./components/orderTableColumns";
-import StyledPageHeader from "../../../components/PageHeader";
-import { StyledInput } from "../../../components/StyledInput";
-import { Wrapper } from "../../../components/Wrapper";
+import StyledPageHeader from "@/components/PageHeader";
+import { StyledInput } from "@/components/StyledInput";
+import { Wrapper } from "@/components/Wrapper";
 
 const AdminOrders: React.FC = () => {
   const dispatch = useDispatch();

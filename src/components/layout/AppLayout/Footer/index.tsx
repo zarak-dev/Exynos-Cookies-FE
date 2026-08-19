@@ -1,5 +1,5 @@
 import React from "react";
-import logoSvg from "../../../../assets/images/exynos-icon-footer.png";
+import logoSvg from "@/assets/images/exynos-icon-footer.png";
 import {
   StyledFooter,
   FooterGrid,

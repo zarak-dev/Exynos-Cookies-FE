@@ -8,7 +8,7 @@ import {
   TotalText,
   SubmitButton,
 } from "../styles";
-import type { GroupedCartItem } from "../../../../utils/cartUtils";
+import type { GroupedCartItem } from "@/utils/cartUtils";
 
 const { Text } = Typography;
 

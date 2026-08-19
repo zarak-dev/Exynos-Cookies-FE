@@ -8,14 +8,14 @@ import {
   setBoxSize,
   removeCookieFromBox,
   type BoxSize,
-} from "../../../store/slices/cartSlice";
+} from "@/store/slices/cartSlice";
 
 import { SlotGrid, CookieSlot, DrawerFooter, TotalRow } from "./styles";
-import { StyledTitle } from "../../StyledTitle";
+import { StyledTitle } from "@/components/StyledTitle";
 import Text from "antd/es/typography/Text";
-import { Wrapper } from "../../Wrapper";
-import type { Cookie } from "../../../utils/mockData";
-import type { RootState } from "../../../store";
+import { Wrapper } from "@/components/Wrapper";
+import type { Cookie } from "@/utils/mockData";
+import type { RootState } from "@/store";
 
 export const CartDrawer: React.FC = () => {
   const dispatch = useDispatch();

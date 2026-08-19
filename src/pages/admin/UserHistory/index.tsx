@@ -3,15 +3,12 @@ import { Table, Button, Input, message } from "antd";
 import { SearchOutlined, PlusOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 
-import { type RootState } from "../../../store";
-import {
-  fetchUsersStart,
-  deleteUser,
-} from "../../../store/slices/userHistorySlice";
+import { type RootState } from "@/store";
+import { fetchUsersStart, deleteUser } from "@/store/slices/userHistorySlice";
 import { HistoryCardWrapper } from "./styles";
 import { getUserHistoryColumns } from "./components/columnData";
-import StyledPageHeader from "../../../components/PageHeader";
-import { Wrapper } from "../../../components/Wrapper";
+import StyledPageHeader from "@/components/PageHeader";
+import { Wrapper } from "@/components/Wrapper";
 import HistoryModal from "./components/historyModal";
 
 const UserHistory: React.FC = () => {

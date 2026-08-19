@@ -1,5 +1,5 @@
 import React from "react";
-import storyIllustration from "../../../assets/images/man-with-cookie.jpg";
+import storyIllustration from "@/assets/images/man-with-cookie.jpg";
 
 import {
   PageWrapper,

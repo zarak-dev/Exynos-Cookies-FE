@@ -5,14 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   toggleItemAvailability,
   deleteItem,
-} from "../../../store/slices/inventorySlice";
-import type { RootState } from "../../../store";
-import { StyledCard } from "../../../components/StyledCard";
-import { StyledInput } from "../../../components/StyledInput";
+} from "@/store/slices/inventorySlice";
+import type { RootState } from "@/store";
+import { StyledCard } from "@/components/StyledCard";
+import { StyledInput } from "@/components/StyledInput";
 import { getInventoryColumns } from "./columns";
 import type { HandleAvailabilityChangeParams } from "./types";
-import StyledPageHeader from "../../../components/PageHeader";
-import { Wrapper } from "../../../components/Wrapper";
+import StyledPageHeader from "@/components/PageHeader";
+import { Wrapper } from "@/components/Wrapper";
 
 const AdminInventory: React.FC = () => {
   const inventory = useSelector((state: RootState) => state.inventory.items);
@@ -53,7 +53,12 @@ const AdminInventory: React.FC = () => {
         breadcrumbs={[{ title: "Admin" }, { title: "Inventory" }]}
         extra={
           <Tooltip title="Adding new cookies is currently unavailable. Coming soon!">
-            <Button shape="round" type="primary" icon={<PlusOutlined />} disabled>
+            <Button
+              shape="round"
+              type="primary"
+              icon={<PlusOutlined />}
+              disabled
+            >
               Add Cookie
             </Button>
           </Tooltip>

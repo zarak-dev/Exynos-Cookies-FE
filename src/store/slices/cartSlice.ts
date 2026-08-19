@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { type Cookie } from "../../utils/mockData";
+import { type Cookie } from "@/utils/mockData";
 
 export type BoxSize = 4 | 6 | 12;
 

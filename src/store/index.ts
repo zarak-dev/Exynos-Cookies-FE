@@ -3,10 +3,10 @@ import createSagaMiddleware from "redux-saga";
 import { all, fork } from "redux-saga/effects";
 
 // Import Reducers
-import authReducer from "../store/slices/authSlice";
-import cartReducer from "../store/slices/cartSlice";
-import inventoryReducer from "../store/slices/inventorySlice";
-import orderReducer from "../store/slices/orderSlice";
+import authReducer from "@/store/slices/authSlice";
+import cartReducer from "@/store/slices/cartSlice";
+import inventoryReducer from "@/store/slices/inventorySlice";
+import orderReducer from "@/store/slices/orderSlice";
 import userHistoryReducer from "./slices/userHistorySlice";
 import reviewReducer from "./slices/reviewSlice"; //
 

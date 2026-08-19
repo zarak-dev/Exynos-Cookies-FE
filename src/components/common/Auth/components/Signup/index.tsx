@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   ADMIN_EMAIL,
   registerUser,
-} from "../../../../../store/slices/authSlice";
+} from "@/store/slices/authSlice";
 import { type RootState } from "../../../../../store";
 import type { SignUpFormValues } from "../../Types";
-import { setOpenAuthModal } from "../../../../../store/slices/authSlice";
+import { setOpenAuthModal } from "@/store/slices/authSlice";
 
 export const SignUpForm = () => {
   const dispatch = useDispatch();

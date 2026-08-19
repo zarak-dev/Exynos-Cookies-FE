@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Button, Modal, Space} from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { type RootState } from "../../../store";
-import { setOpenAuthModal } from "../../../store/slices/authSlice";
+import { type RootState } from "@/store";
+import { setOpenAuthModal } from "@/store/slices/authSlice";
 
 import { LoginForm } from "./components/Login";
 import { SignUpForm } from "./components/Signup";

@@ -2,10 +2,10 @@ import { useState } from "react";
 import { message } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { type RootState } from "../../../../store";
-import { DELIVERY_FEE } from "../../../../constants/pricing";
-import { clearBox } from "../../../../store/slices/cartSlice";
-import { placeNewOrder, type Order } from "../../../../store/slices/orderSlice";
+import { type RootState } from "@/store";
+import { DELIVERY_FEE } from "@/constants/pricing";
+import { clearBox } from "@/store/slices/cartSlice";
+import { placeNewOrder, type Order } from "@/store/slices/orderSlice";
 import {
   groupCartItems,
   buildContentsString,

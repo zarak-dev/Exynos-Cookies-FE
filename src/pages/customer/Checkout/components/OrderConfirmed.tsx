@@ -9,7 +9,7 @@ import {
   Space,
 } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
-import type { Order } from "../../../../store/slices/orderSlice";
+import type { Order } from "@/store/slices/orderSlice";
 import {
   CenteredContainer,
   SuccessCard,

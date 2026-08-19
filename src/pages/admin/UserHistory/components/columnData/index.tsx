@@ -1,7 +1,7 @@
 import { Avatar, Button, Flex, Popconfirm, Tag, Typography } from "antd";
 import { DeleteOutlined, UserOutlined } from "@ant-design/icons";
 import type { ColumnsType } from "antd/es/table";
-import type { UserHistoryRow } from "../../../../../store/slices/userHistorySlice";
+import type { UserHistoryRow } from "@/store/slices/userHistorySlice";
 
 const { Text } = Typography;
 

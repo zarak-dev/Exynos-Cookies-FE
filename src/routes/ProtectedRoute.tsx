@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { type RootState } from "../store";
-import { type UserRole } from "../store/slices/authSlice";
+import { type RootState } from "@/store";
+import { type UserRole } from "@/store/slices/authSlice";
 
 interface ProtectedRouteProps {
   role?: UserRole;

@@ -6,7 +6,7 @@ import { OrderConfirmed } from "./components/OrderConfirmed";
 import { EmptyCart } from "./components/EmptyCart";
 import { useCheckout } from "./components/useCheckout";
 import { type FormValues } from "./types";
-import { deleteOrder } from "../../../store/slices/orderSlice";
+import { deleteOrder } from "@/store/slices/orderSlice";
 import {
   CheckoutContainer,
   FullWidthRadioGroup,

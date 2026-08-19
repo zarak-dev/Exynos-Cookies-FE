@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { loadFromStorage } from "../../utils/storage";
+import { loadFromStorage } from "@/utils/storage";
 
 export type UserRole = "customer" | "admin";
 

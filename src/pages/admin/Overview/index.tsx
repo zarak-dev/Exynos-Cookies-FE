@@ -19,8 +19,8 @@ import {
   StockTagsWrapper,
   StockCountText,
 } from "./styles";
-import StyledPageHeader from "../../../components/PageHeader";
-import { Wrapper } from "../../../components/Wrapper";
+import StyledPageHeader from "@/components/PageHeader";
+import { Wrapper } from "@/components/Wrapper";
 
 const { Text } = Typography;
 

@@ -4,8 +4,8 @@ import {
   ADMIN_EMAIL,
   loginUser,
   setOpenAuthModal,
-} from "../../../../../store/slices/authSlice";
-import { type RootState } from "../../../../../store";
+} from "@/store/slices/authSlice";
+import { type RootState } from "@/store";
 import type { LoginFormValues } from "../../Types";
 
 const SECRET_ADMIN_PASS = "123456";
@@ -50,7 +50,9 @@ export const LoginForm = () => {
       <Form.Item
         name="email"
         label="Email"
-        rules={[{ required: true, type: "email" }]}
+        rules={[
+          { required: true, type: "email", message: "Please enter email" },
+        ]}
       >
         <Input />
       </Form.Item>
@@ -58,7 +60,7 @@ export const LoginForm = () => {
       <Form.Item
         name="password"
         label="Password"
-        rules={[{ required: true, min: 6 }]}
+        rules={[{ required: true, min: 6, message: "Please enter password" }]}
       >
         <Input.Password />
       </Form.Item>

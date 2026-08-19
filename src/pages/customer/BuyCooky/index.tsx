@@ -13,12 +13,12 @@ import {
 } from "antd";
 import { SearchOutlined, DownCircleTwoTone } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { type Cookie } from "../../../utils/mockData";
-import { type RootState } from "../../../store";
-import { setBoxSize } from "../../../store/slices/cartSlice";
-import { StyledInput } from "../../../components/StyledInput";
-import { StyledTitle } from "../../../components/StyledTitle";
-import { BOX_SIZES } from "../../../constants/pricing";
+import { type Cookie } from "@/utils/mockData";
+import { type RootState } from "@/store";
+import { setBoxSize } from "@/store/slices/cartSlice";
+import { StyledInput } from "@/components/StyledInput";
+import { StyledTitle } from "@/components/StyledTitle";
+import { BOX_SIZES } from "@/constants/pricing";
 import {
   CoverImage,
   CardHeader,
@@ -64,7 +64,9 @@ const BuyCooky: React.FC = () => {
   );
 
   const filteredCookies = cookies
-    .filter((cookie) => cookie.name.toLowerCase().includes(search.toLowerCase()))
+    .filter((cookie) =>
+      cookie.name.toLowerCase().includes(search.toLowerCase()),
+    )
     .sort((a, b) =>
       sortBy === "price-low"
         ? a.price - b.price
