@@ -4,14 +4,19 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import {
   loginRequest,
   loginUser,
+  registerRequest,
+  registerUser,
   setOpenAuthModal,
   selectRegisteredUsers,
   ADMIN_EMAIL,
 } from "@/store/slices/authSlice";
 import { SECRET_ADMIN_PASS, ADMIN_DISPLAY_NAME } from "@/constants/pricing";
+import type { RegisteredUser } from "@/store/slices/authSlice";
+
+const normalizeEmail = (email: string) => email.toLowerCase();
 
 const isAdminEmail = (email: string) =>
-  email.toLowerCase() === ADMIN_EMAIL.toLowerCase();
+  normalizeEmail(email) === normalizeEmail(ADMIN_EMAIL);
 
 const findRegisteredUser = (
   users: ReturnType<typeof selectRegisteredUsers>,
@@ -20,7 +25,8 @@ const findRegisteredUser = (
 ) =>
   users.find(
     (u) =>
-      u.email.toLowerCase() === email.toLowerCase() && u.password === password,
+      normalizeEmail(u.email) === normalizeEmail(email) &&
+      u.password === password,
   );
 
 function* handleLogin(
@@ -54,6 +60,13 @@ function* handleLogin(
   yield call([message, message.success], `Welcome back, ${matchedUser.name}!`);
 }
 
+function* handleRegister(action: PayloadAction<RegisteredUser>): Generator {
+  yield put(registerUser(action.payload));
+  yield put(setOpenAuthModal(false));
+  yield call([message, message.success], "Account created");
+}
+
 export function* watchAuth() {
   yield takeLatest(loginRequest.type, handleLogin);
+  yield takeLatest(registerRequest.type, handleRegister);
 }

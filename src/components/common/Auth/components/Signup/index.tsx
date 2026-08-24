@@ -1,16 +1,14 @@
-import { Form, Input, Button, message } from "antd";
+import { Form, Input, Button } from "antd";
 import { useDispatch } from "react-redux";
-import {
-  ADMIN_EMAIL,
-  registerUser,
-  setOpenAuthModal,
-} from "@/store/slices/authSlice";
+import { ADMIN_EMAIL, registerRequest } from "@/store/slices/authSlice";
 import type { SignUpFormValues } from "@/components/common/Auth/Types";
 
 const { Password } = Input;
 
+const normalizeEmail = (email: string) => email.toLowerCase();
+
 const assignRole = (email: string) =>
-  email.toLowerCase() === ADMIN_EMAIL.toLowerCase() ? "admin" : "customer";
+  normalizeEmail(email) === normalizeEmail(ADMIN_EMAIL) ? "admin" : "customer";
 
 export const SignUpForm = () => {
   const dispatch = useDispatch();
@@ -20,7 +18,7 @@ export const SignUpForm = () => {
     const trimmedEmail = email.trim();
 
     dispatch(
-      registerUser({
+      registerRequest({
         name,
         email: trimmedEmail,
         password,
@@ -28,9 +26,7 @@ export const SignUpForm = () => {
       }),
     );
 
-    message.success("Account created");
     form.resetFields();
-    dispatch(setOpenAuthModal(false));
   };
 
   return (
@@ -60,13 +56,7 @@ export const SignUpForm = () => {
       <Form.Item
         name="password"
         label="Password"
-        rules={[
-          {
-            required: true,
-            min: 6,
-            message: "Password must be at least 6 characters",
-          },
-        ]}
+        rules={[{ required: true, message: "Please enter your password" }]}
       >
         <Password placeholder="Enter your password" />
       </Form.Item>

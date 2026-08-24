@@ -3,14 +3,12 @@ import { loadFromStorage } from "@/utils/storage";
 
 export type UserRole = "customer" | "admin";
 
-// The active session profile
 export interface UserProfile {
   name: string;
   email: string;
   role: UserRole;
 }
 
-// The stored credentials (extends UserProfile to include the password for the mock DB)
 export interface RegisteredUser extends UserProfile {
   password?: string;
 }
@@ -39,6 +37,9 @@ const authSlice = createSlice({
       state.isAuthModalOpen = action.payload;
     },
 
+    // Signal only — saga listens and shows success message
+    registerRequest: (_state, _action: PayloadAction<RegisteredUser>) => {},
+
     registerUser: (state, action: PayloadAction<RegisteredUser>) => {
       state.registeredUsers.push(action.payload);
       localStorage.setItem(
@@ -47,7 +48,7 @@ const authSlice = createSlice({
       );
     },
 
-    // This action is just a signal — the saga listens to it and does the work
+    // Signal only — saga listens and does the work
     loginRequest: (
       _state,
       _action: PayloadAction<{ email: string; password: string }>,
@@ -82,6 +83,7 @@ const authSlice = createSlice({
 
 export const {
   setOpenAuthModal,
+  registerRequest,
   registerUser,
   loginRequest,
   loginUser,
