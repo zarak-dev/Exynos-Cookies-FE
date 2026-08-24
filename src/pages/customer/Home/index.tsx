@@ -140,7 +140,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchReviewUsers());
-  }, []);
+  }, [dispatch]);
 
   const carouselCookies = cookies.slice(0, 6);
   // Build a lookup table once — each cookie is instantly accessible by its id

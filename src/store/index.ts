@@ -13,11 +13,11 @@ import reviewReducer from "./slices/reviewSlice"; //
 // Import Sagas
 import { watchUserHistory } from "./sagas/userHistorySaga"; //
 import { reviewSaga } from "./sagas/reviewSaga";
-
+import { watchAuth } from "./sagas/authSaga";
 //  Centralized Root Saga
 // As we add more features, just add their watchers here
 function* rootSaga() {
-  yield all([fork(watchUserHistory), fork(reviewSaga)]);
+  yield all([fork(watchUserHistory), fork(reviewSaga), fork(watchAuth)]);
 }
 
 // Initialize Middleware

@@ -19,7 +19,7 @@ interface AuthState {
   isAuthModalOpen: boolean;
   isLoggedIn: boolean;
   user: UserProfile | null;
-  registeredUsers: RegisteredUser[]; //New array to hold our "database" of users
+  registeredUsers: RegisteredUser[];
 }
 
 export const ADMIN_EMAIL = "admin@exynoscooky.com";
@@ -39,7 +39,6 @@ const authSlice = createSlice({
       state.isAuthModalOpen = action.payload;
     },
 
-    //  Registers the user and syncs to localStorage, but DOES NOT log them in
     registerUser: (state, action: PayloadAction<RegisteredUser>) => {
       state.registeredUsers.push(action.payload);
       localStorage.setItem(
@@ -48,11 +47,16 @@ const authSlice = createSlice({
       );
     },
 
+    // This action is just a signal — the saga listens to it and does the work
+    loginRequest: (
+      _state,
+      _action: PayloadAction<{ email: string; password: string }>,
+    ) => {},
+
     loginUser: (
       state,
       action: PayloadAction<{ name?: string; email: string }>,
     ) => {
-      // Determine the role dynamically by evaluating the submitted email string
       const assignedRole: UserRole =
         action.payload.email.toLowerCase() === ADMIN_EMAIL.toLowerCase()
           ? "admin"
@@ -79,7 +83,12 @@ const authSlice = createSlice({
 export const {
   setOpenAuthModal,
   registerUser,
+  loginRequest,
   loginUser,
   logoutUser,
 } = authSlice.actions;
+
 export default authSlice.reducer;
+
+export const selectRegisteredUsers = (state: { auth: AuthState }) =>
+  state.auth.registeredUsers;
